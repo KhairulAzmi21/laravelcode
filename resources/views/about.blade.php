@@ -6,6 +6,10 @@
 </head>
 <body>
 	<h1> This is about page</h1>
-	<h2> Hello {{ $name }} </h2>
+	<ul>
+		@foreach($tasks as $task)
+		<li>  {{$task}} </li>
+		@endforeach
+	</ul>
 </body>
 </html>

@@ -16,7 +16,14 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-	$name = "khairul azmi";
-	return view('about', compact('name'));
+
+	$tasks = [
+		'pergi kerja di netbox',
+		'jangan lupa untuk melabur saham',
+		'ahad ni tak jadi pergi ke langkawi'];
+
+	return view('about', compact('tasks'));
+	/*$name = "khairul azmi";
+	return view('about', compact('name'));*/
 	//return view('about', ['name' => 'khairul']);
 });
