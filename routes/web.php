@@ -16,5 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-	return view('about', ['name' => 'khairul']);
+	$name = "khairul azmi";
+	return view('about', compact('name'));
+	//return view('about', ['name' => 'khairul']);
 });
