@@ -29,3 +29,12 @@ Route::get('/about', function () {
 	return view('about', compact('name'));*/
 	//return view('about', ['name' => 'khairul']);
 });
+
+Route::get('/about/{id}', function ($id) {
+	//{id} - wildcards
+
+	$task = DB::table('tasks')->find($id);
+
+	return view('details', compact('task'));
+
+});
