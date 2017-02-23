@@ -17,12 +17,14 @@ Route::get('/', function () {
 
 Route::get('/about', function () {
 
-	$tasks = [
+	$tasks = DB::table('tasks')->get();
+	return view('about', compact('tasks'));
+	/*$tasks = [
 		'pergi kerja di netbox',
 		'jangan lupa untuk melabur saham',
 		'ahad ni tak jadi pergi ke langkawi'];
 
-	return view('about', compact('tasks'));
+	return view('about', compact('tasks'));*/
 	/*$name = "khairul azmi";
 	return view('about', compact('name'));*/
 	//return view('about', ['name' => 'khairul']);
