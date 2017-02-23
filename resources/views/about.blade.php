@@ -8,7 +8,7 @@
 	<h1> This is about page</h1>
 	<ul>
 		@foreach($tasks as $task)
-		<li><a href="/about/{{$task->id}}">  {{$task-> body}}</a> </li>
+		<li><a href="/about/{{$task->id}}">  {{$task-> body}}</a>   </li>
 		@endforeach
 	</ul>
 </body>

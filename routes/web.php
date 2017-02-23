@@ -17,7 +17,8 @@ Route::get('/', function () {
 
 Route::get('/about', function () {
 
-	$tasks = DB::table('tasks')->get();
+	//$tasks = DB::table('tasks')->get();
+	$tasks = App\Task::all();
 	return view('about', compact('tasks'));
 	/*$tasks = [
 		'pergi kerja di netbox',
@@ -33,7 +34,8 @@ Route::get('/about', function () {
 Route::get('/about/{id}', function ($id) {
 	//{id} - wildcards
 
-	$task = DB::table('tasks')->find($id);
+	//$task = DB::table('tasks')->find($id);
+	$task = App\Task::find($id);
 
 	return view('details', compact('task'));
 
