@@ -15,5 +15,8 @@ Route::get('/', function () {
 	return view('welcome');
 });
 
-Route::get('/about', 'TaskController@index');
-Route::get('/about/{task}', 'TaskController@show');
+Route::get('/tasks', 'TaskController@index');
+Route::get('/task/{task}', 'TaskController@show');
+Route::get('/posts', 'PostController@index');
+Route::get('/posts/create', 'PostController@create');
+Route::post('/posts', 'PostController@store');
