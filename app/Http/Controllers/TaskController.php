@@ -18,10 +18,13 @@ class TaskController extends Controller {
 		return view('about', compact('name'));*/
 		//return view('about', ['name' => 'khairul']);
 	}
-	public function show($id) {
+	//Route model binding make sure wildcare in w/route same with parameter name
+	//it does like Task::find($task);
+	public function show(Task $task) {
 		//{id} - wildcards
 		//$task = DB::table('tasks')->find($id);
-		$task = Task::find($id);
+		//$task = Task::find($id);
+
 		return view('details', compact('task'));
 
 	}
