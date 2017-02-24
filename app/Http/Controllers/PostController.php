@@ -19,6 +19,9 @@ class PostController extends Controller {
 		// save it to the database
 		// and then redirect to the home page
 		//dd(request()->all());
+		$this->validate(request(), [
+			'title' => 'required|max:50',
+			'body'  => 'required']);
 		Post::create(request(['title', 'body']));
 		return view('blog.create');
 		/*Post::create([
