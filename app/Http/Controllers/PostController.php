@@ -6,10 +6,13 @@ use App\Post;
 
 class PostController extends Controller {
 	public function index() {
-		return view('blog.index');
+		$posts = Post::latest()->get();
+		return view('blog.index',compact('posts'));
 	}
-	public function show() {
-		return view('blog.show');
+	//route model binding Post $post    
+	public function show(Post $post) {
+
+		return view('blog.show',compact('post'));
 	}
 	public function create() {
 		return view('blog.create');
